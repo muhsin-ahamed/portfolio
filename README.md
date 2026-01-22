@@ -2,7 +2,7 @@
 
 A modern, premium personal portfolio website showcasing the work and expertise of Muhsin Ahamed T, a Lead Software Engineer and Flutter Expert.
 
-![Portfolio Preview](assets/hero-preview.png) *(Note: Add a screenshot of your portfolio here!)*
+![Portfolio Preview](assets/portfolio-preview.png)
 
 ## 🚀 Features
 
