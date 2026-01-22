@@ -48,6 +48,7 @@
             <div class="hero-actions reveal">
                 <a href="#contact" class="btn btn-primary">Let's Talk</a>
                 <a href="#projects" class="btn btn-outline">View My Work</a>
+
             </div>
         </div>
     </section>
@@ -156,7 +157,7 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/muhsin-ahamed-t" class="social-link" target="_blank"><i
                                 data-lucide="linkedin"></i></a>
-                        <a href="https://github.com/muhsinahamed" class="social-link" target="_blank"><i
+                        <a href="https://github.com/muhsin-ahamed" class="social-link" target="_blank"><i
                                 data-lucide="github"></i></a>
                         <a href="https://www.instagram.com/muhsin_ktkl/" class="social-link" target="_blank"><i
                                 data-lucide="instagram"></i></a>
@@ -165,29 +166,47 @@
 
                 <div class="contact-form-wrapper">
                     <h3 class="form-title">Send Message</h3>
-                    <form id="contact-form" class="contact-form">
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    <form id="contact-form" class="contact-form"
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJh3uAYB68G0JPi26aG-NAxGzlv8YLtGT-3ZvWU-oVrrP0Tg/formResponse"
+                        method="POST" target="hidden_iframe">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <input type="text" id="name" name="entry.1964428350" required placeholder="John Doe">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <input type="email" id="email" name="entry.612727414" required
+                                placeholder="john@example.com">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Project Proposal">
+                            <input type="text" id="subject" name="entry.1751577466" required
+                                placeholder="Project Proposal">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required
+                            <textarea id="message" name="entry.673714312" rows="5" required
                                 placeholder="Hello, I'd like to discuss..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary full-width">Send Message</button>
                     </form>
                 </div>
             </div>
+
+            <!-- Success Modal -->
+            <div id="success-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <div class="modal-icon">
+                        <i data-lucide="check"></i>
+                    </div>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                    <button class="btn btn-primary" onclick="closeModal()">Close</button>
+                </div>
+            </div>
         </div>
+
     </section>
 
     <footer>

@@ -150,26 +150,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact Form Handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // In a real app, this would send data to a backend
-            const formData = new FormData(contactForm);
-            console.log('Form Submitted:', Object.fromEntries(formData));
-
-            // Show feedback
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            btn.innerText = 'Message Sent!';
-            btn.style.background = 'var(--accent-secondary)';
-
-            contactForm.reset();
+        contactForm.addEventListener('submit', () => {
+            // The form submits to the iframe automatically due to target="hidden_iframe"
+            // We just need to show the success message
 
             setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = '';
-            }, 3000);
+                const modal = document.getElementById('success-modal');
+                if (modal) {
+                    modal.classList.add('active');
+                }
+                contactForm.reset();
+            }, 500); // Small delay to ensure submission starts
         });
     }
+
+    // Modal Close Function (global scope to be accessible by inline onclick)
+    window.closeModal = function () {
+        const modal = document.getElementById('success-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    };
 
     // Initialize observer for ALL revealed elements (static + dynamic)
     initObserver();
