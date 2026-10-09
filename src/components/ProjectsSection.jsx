@@ -64,10 +64,10 @@ export default function ProjectsSection({ onSelectProject }) {
               03 // SELECTED WORKS
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Engineered Systems & Applications
+              Featured Projects & Applications
             </h2>
             <p className="mt-3 text-base text-slate-600 max-w-2xl leading-relaxed">
-              Production-grade web apps, cross-platform mobile clients, and enterprise management tools built with Flutter, React, and scalable backend services.
+              Explore real-world applications built with Flutter, modern web technologies, and scalable backend services — from cross-platform mobile apps to student portals and event management systems.
             </p>
           </div>
 
