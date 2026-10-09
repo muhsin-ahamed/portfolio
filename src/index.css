@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    background-color: #FAFBFD;
+    color: #0F172A;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.font-pixel {
+  font-family: 'Pixelify Sans', 'Silkscreen', monospace;
+}
+
+.font-typewriter {
+  font-family: 'Space Mono', 'Courier Prime', monospace;
+}
+
+/* Retro Paper Memo Card (devb.io style) */
+.paper-memo-card {
+  background-color: #FAF8F5;
+  border: 1.5px solid #1C1917;
+  box-shadow: 4px 4px 0px 0px #1C1917;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-memo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px 0px #1C1917;
+}
+
+/* Subtle dot-grid paper background like sunithvs.com */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle paper texture border effect */
+.paper-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+}
+
+.paper-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 12px 24px -10px rgba(99, 102, 241, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+}
+
+
+
+/* Tactile pill badge */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  border: 1px solid currentColor;
+}
+
+/* Pulse indicator animation */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
