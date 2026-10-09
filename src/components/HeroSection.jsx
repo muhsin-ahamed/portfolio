@@ -3,7 +3,6 @@ import { profileData } from '../data/profileData';
 import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from './SocialIcons';
 import {
   ArrowRight,
-  FileText,
   Sparkles,
   Zap,
   Copy,
@@ -16,7 +15,7 @@ import {
   Layers
 } from 'lucide-react';
 
-export default function HeroSection({ onOpenResume, onCopyEmail }) {
+export default function HeroSection({ onCopyEmail }) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -62,14 +61,6 @@ export default function HeroSection({ onOpenResume, onCopyEmail }) {
                 View My Projects
                 <ArrowRight className="w-4 h-4" />
               </a>
-
-              <button
-                onClick={onOpenResume}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm text-slate-700 bg-white border border-slate-200/90 shadow-xs hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer w-full sm:w-auto"
-              >
-                <FileText className="w-4 h-4 text-indigo-600" />
-                Resume PDF
-              </button>
             </div>
 
             {/* Tech Stack Icons Bar */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, FileText, Send, Sparkles } from 'lucide-react';
+import { Menu, X, Code2, Send, Sparkles } from 'lucide-react';
 
-export default function Navbar({ onOpenResume }) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -88,14 +88,6 @@ export default function Navbar({ onOpenResume }) {
 
           {/* Right CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={onOpenResume}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white border border-slate-200 shadow-2xs hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer"
-            >
-              <FileText className="w-4 h-4 text-indigo-600" />
-              Resume
-            </button>
-
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-extrabold text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm hover:shadow-md transition-all cursor-pointer"
@@ -143,16 +135,6 @@ export default function Navbar({ onOpenResume }) {
               </a>
             ))}
             <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 mt-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200"
-              >
-                <FileText className="w-4 h-4 text-indigo-600" />
-                View Resume
-              </button>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}

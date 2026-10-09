@@ -20,7 +20,7 @@ import {
   Handshake
 } from 'lucide-react';
 
-export default function AboutSection({ onOpenResume }) {
+export default function AboutSection() {
   const [activeSkillCategory, setActiveSkillCategory] = useState(0);
 
   const getCategoryIcon = (iconName) => {

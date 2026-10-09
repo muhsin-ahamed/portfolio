@@ -6,13 +6,11 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
-import ResumeModal from './components/ResumeModal';
 import Toast from './components/Toast';
 import { profileData } from './data/profileData';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [toast, setToast] = useState({ message: '', type: 'success' });
 
   const showToast = (message, type = 'success') => {
@@ -45,22 +43,17 @@ export default function App() {
       />
 
       {/* Navbar */}
-      <Navbar 
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+      <Navbar />
 
       {/* Main Content Area */}
       <main className="grow">
         {/* Section 1: Hero Section */}
         <HeroSection 
-          onOpenResume={() => setIsResumeOpen(true)}
           onCopyEmail={handleCopyEmail}
         />
 
         {/* Section 2: About Section */}
-        <AboutSection 
-          onOpenResume={() => setIsResumeOpen(true)}
-        />
+        <AboutSection />
 
         {/* Section 3: Projects Section */}
         <ProjectsSection 
@@ -81,13 +74,6 @@ export default function App() {
         <ProjectModal 
           project={selectedProject} 
           onClose={() => setSelectedProject(null)} 
-        />
-      )}
-
-      {/* Interactive Resume View/Print Modal */}
-      {isResumeOpen && (
-        <ResumeModal 
-          onClose={() => setIsResumeOpen(false)} 
         />
       )}
 
