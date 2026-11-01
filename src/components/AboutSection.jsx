@@ -69,52 +69,18 @@ export default function AboutSection() {
           </h2>
         </div>
 
-        {/* Section 1: Overview & Stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          {/* Checks Card */}
-          <div className="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs">
-            <ul className="space-y-4 sm:space-y-5">
-              {bioChecks.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                  <span className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Stats Cards */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-3.5">
-            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
-              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
-                6
-              </strong>
-              <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                Projects built
-              </span>
-            </div>
-
-            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
-              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
-                5
-              </strong>
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-                <span>Live in production</span>
-              </span>
-            </div>
-
-            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
-              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
-                4
-              </strong>
-              <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                Platforms supported
-              </span>
-            </div>
-          </div>
+        {/* Section 1: Overview */}
+        <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-8 shadow-xs">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {bioChecks.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                <span className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                  ✓
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Section 2: How I Work */}
