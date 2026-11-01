@@ -71,7 +71,7 @@ export default function AboutSection() {
 
         {/* Section 1: Overview */}
         <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-8 shadow-xs">
-          <ul className="space-y-4 sm:space-y-5">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 sm:gap-x-12">
             {bioChecks.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                 <span className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
