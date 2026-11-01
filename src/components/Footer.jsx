@@ -1,6 +1,6 @@
 import React from 'react';
 import { profileData } from '../data/profileData';
-import { GithubIcon, LinkedinIcon, InstagramIcon, TwitterIcon, EmailIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, XIcon, EmailIcon } from './SocialIcons';
 import { ArrowUp } from 'lucide-react';
 
 export default function Footer() {
@@ -9,34 +9,30 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-50 text-slate-600 py-8 border-t border-slate-200/90">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-slate-200/60 dark:border-slate-800/70 py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-5 border-b border-slate-200/80">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center gap-2 mb-1.5">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm shadow-2xs">
-                M
-              </div>
-              <span className="font-extrabold text-slate-900 text-lg tracking-tight">
-                Muhsin Ahamed T
-              </span>
-            </div>
-            <p className="text-xs text-slate-600 max-w-sm">
-              Flutter Developer building cross-platform apps, business solutions, and scalable web platforms with clean architecture.
-            </p>
+          {/* Identity & Copyright */}
+          <div>
+            <span className="font-bold text-slate-900 dark:text-white text-sm tracking-tight block">
+              Muhsin Ahamed T
+            </span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 block">
+              Flutter Developer &amp; Full-Stack Engineer · © {new Date().getFullYear()}
+            </span>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Social Links & Back to Top */}
+          <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
             <a
               href={profileData.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 shadow-2xs transition-colors"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
               title="GitHub"
+              aria-label="GitHub"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
@@ -44,54 +40,51 @@ export default function Footer() {
               href={profileData.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 shadow-2xs transition-colors"
+              className="hover:text-[#0A66C2] dark:hover:text-[#388bfd] transition-colors"
               title="LinkedIn"
+              aria-label="LinkedIn"
             >
               <LinkedinIcon className="w-4 h-4" />
-            </a>
-            <a
-              href={profileData.socials.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 shadow-2xs transition-colors"
-              title="Instagram"
-            >
-              <InstagramIcon className="w-4 h-4" />
             </a>
             <a
               href={profileData.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 shadow-2xs transition-colors"
-              title="X (Twitter)"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
+              title="X"
+              aria-label="X"
             >
-              <TwitterIcon className="w-4 h-4" />
+              <XIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={profileData.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
+              title="Instagram"
+              aria-label="Instagram"
+            >
+              <InstagramIcon className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${profileData.email}`}
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 shadow-2xs transition-colors"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
               title="Email"
               aria-label="Email"
             >
               <EmailIcon className="w-4 h-4" />
             </a>
+
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-colors cursor-pointer ml-1 shadow-xs"
-              title="Scroll to Top"
+              className="ml-2 p-1.5 rounded-lg text-slate-400 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              title="Back to top"
+              aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
           </div>
 
-        </div>
-
-        {/* Bottom Credits */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-          <p>© {new Date().getFullYear()} Muhsin Ahamed T. All rights reserved.</p>
-          <p>
-            Designed & developed with care.
-          </p>
         </div>
 
       </div>

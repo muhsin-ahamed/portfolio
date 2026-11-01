@@ -25,15 +25,8 @@ export default function App() {
     showToast(`Copied ${email} to clipboard!`);
   };
 
-  const scrollToContact = () => {
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#FAFBFD] text-slate-900 flex flex-col font-sans antialiased">
+    <div className="min-h-screen bg-[#FAFBFD] dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 flex flex-col font-sans antialiased transition-colors duration-200">
       
       {/* Toast Notification Container */}
       <Toast 

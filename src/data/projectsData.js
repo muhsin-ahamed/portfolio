@@ -1,48 +1,55 @@
 export const projectsData = [
   {
-    id: "kuri-draw-lots",
-    codeName: "kuri-lucky-draw",
-    title: "kuri-lucky-draw (കുറി): Digital Transparent Lucky Draw & Chit Allocation Suite",
+    id: "chicken-shop-pos-suite",
+    codeName: "chicken-pos.io",
+    title: "Chicken Shop Management & Retail POS Suite: Role-Based Flutter ERP",
     category: ["flutter", "enterprise"],
-    categoryLabel: "Flutter Web & EventTech",
-    shortDescription: "A modern, high-performance Flutter Web application engineered for transparent chit allocation, randomized event prize draws, and group lotteries, featuring a dynamic physics-based spinning wheel canvas, native Malayalam localization, responsive multi-view layouts, and real-time celebratory audio-visual feedback.",
-    overview: "kuri-lucky-draw (കുറി) is a digital lucky draw and chit allocation platform engineered to conduct transparent, tamper-proof draws for monthly chit funds, event giveaways, and group competitions. Built with Flutter Web, the platform replaces traditional paper-based chit drawing (\"കുറി നറുക്കെടുപ്പ്\") with an interactive 2D canvas spinning wheel powered by custom trigonometric physics and smooth deceleration curves.",
-    fullDescription: "kuri-lucky-draw (കുറി) is a digital lucky draw and chit allocation platform engineered to conduct transparent, tamper-proof draws for monthly chit funds, event giveaways, and group competitions. Built with Flutter Web, the platform replaces traditional paper-based chit drawing with an interactive 2D canvas spinning wheel powered by custom trigonometric physics and smooth deceleration curves. The suite integrates dynamic participant roster management, intelligent viewport layout adaptation (Mobile Column View vs. Web Multi-Column Wrap Grid), real-time slice hover tracking with tactile haptic ticks, and an automated winner scroll sync. Upon completion of each draw, the system triggers a celebratory glassmorphic modal overlay complete with explosive multi-colored confetti particles and session winner logging.",
-    problemSolution: "Problem: Traditional chit fund lotteries and community lucky draws rely on manual paper chits, which suffer from suspicions of bias, accidental chit loss, tedious paper handling, and lack of visual excitement for live audiences.\nSolution: Engineered kuri-lucky-draw (കുറി)—an interactive, verifiable digital lucky draw platform featuring a physics-inspired decelerating spin wheel (CustomPainter), live participant selection ticker, tactile haptic feedback ticks, automated scroll targeting, and native Malayalam typography.",
-    image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1000&q=80",
+    categoryLabel: "Flutter Web, Mobile & Retail POS",
+    shortDescription: "An offline-first retail management and POS suite engineered with Flutter Web & Mobile, Provider, and SharedPreferences. Features role-based Admin & Staff Counter modes, weight-based sales billing with instant digital receipts, poultry purchase/expense tracking, gross profit & margin calculation, and comprehensive business ledger analytics.",
+    overview: "Chicken Shop POS & Retail Management Suite is an end-to-end business management system designed specifically for poultry retailers and meat shops. Engineered with a custom neo-brutalist 'Sticker Minimal' aesthetic, the application streamlines rapid over-the-counter sales with automated weight calculations, itemized multi-category receipts, supplier purchase logging, daily profit and margin reporting, and full administrative configuration of daily bird rates and shop profiles.",
+    fullDescription: "Chicken Shop POS & Retail Management Suite is an end-to-end business management system designed specifically for poultry retailers and meat shops. Engineered with a custom neo-brutalist 'Sticker Minimal' aesthetic, the application streamlines rapid over-the-counter sales with automated weight calculations, itemized multi-category receipts, supplier purchase logging, daily profit and margin reporting, and full administrative configuration of daily bird rates and shop profiles.",
+    problemSolution: "Problem: Poultry retail counters face high-pressure rush hours, fluctuating daily wholesale chicken rates, tedious weight-to-price manual arithmetic, error-prone paper tally books, and zero real-time visibility into net profit margins or supplier payables.\nSolution: Delivered an offline-first, dual-role Flutter POS suite providing sub-second weight-based billing, multi-payment receipt generation (Cash, UPI, Credit), PIN-secured administrative controls, dynamic item pricing (Live Chicken, Curry Cut, Boneless, Wings), automated P&L margin dashboards, and exportable ledger analytics.",
+    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=1000&q=80",
     tags: [
       "Flutter Web",
+      "Flutter Mobile",
       "Dart",
-      "CustomPainter & Trigonometry",
-      "Google Fonts (Noto Sans Malayalam)",
-      "Confetti Engine",
-      "Haptic Feedback API",
-      "Glassmorphism UI",
-      "Responsive Layout Architecture",
-      "AnimationController & Deceleration"
+      "Provider",
+      "Shared Preferences",
+      "Material 3",
+      "Neo-Brutalist UI",
+      "Google Fonts",
+      "Role-Based Access (RBAC)",
+      "POS & Retail Billing",
+      "Digital Receipts",
+      "P&L Analytics & Ledger",
+      "Offline-First"
     ],
     featured: true,
-    githubUrl: "https://github.com/muhsin-ahamed/kuri-draw-lots",
-    liveUrl: "https://kuri-draw-lots-web.vercel.app/",
+    githubUrl: "https://github.com/muhsin-ahamed/chicken-shop-codebase",
+    demoRepoUrl: "https://github.com/muhsin-ahamed/chicken-shop-demo",
+    liveUrl: "https://chicken-shop-demo.vercel.app",
     metrics: [
-      { label: "Fairness", value: "100% Unbiased" },
-      { label: "Canvas Smoothness", value: "60 FPS Canvas" },
-      { label: "Layout Mode", value: "Dual View Engine" },
-      { label: "Feedback", value: "Instant Haptics" }
+      { label: "Billing Engine", value: "< 100ms Weight POS" },
+      { label: "Role Portals", value: "Admin & Staff Modes" },
+      { label: "Architecture", value: "Provider + Local Store" },
+      { label: "Platforms", value: "Web & Android Mobile" }
     ],
     keyFeatures: [
-      "Interactive Custom Canvas Wheel Engine: High-performance 2D wheel rendering using CustomPainter, supporting 10 distinct color palettes, dynamic radial text labels, decorative rim pegs, and central hub gradient layers.",
-      "Dynamic Trigonometric Spin & Deceleration Pipeline: Physics-inspired rotation using Curves.decelerate and precise pointer collision math to calculate the target winning slice prior to deceleration.",
-      "Adaptive Dual-View Roster System: Automatic responsive transition between a full-width Mobile Column List View and a Web Multi-Column Wrap Grid, complete with manual user view-toggle controls.",
-      "Real-Time Audio-Visual & Haptic Feedback: Tactile click haptics on slice ticks during high-speed rotation, culminating in heavy haptic impacts, celebratory confetti explosions, and floating trophy badges.",
-      "Roster Management & Session Winner Log: Real-time participant entry validation, duplicate detection snackbars, bulk clear confirmation modals, and chronological draw history logging.",
-      "Native Malayalam Typography & Glassmorphism Design: Embedded Google Fonts (Noto Sans Malayalam & Poppins) integrated into a modern frosted-glass container with ambient light-glow background blurs."
+      "Dual-Role Operational Workflows: Admin Portal with full financial visibility, P&L analytics, and settings; Staff Counter Mode restricted to fast sales billing and supplier purchases.",
+      "Instant Weight-Based Billing Engine: Sub-second line item addition with automatic quantity × dynamic rate computation, custom notes, customer contact logging, and round-off calculations.",
+      "Branded Digital Receipt Generator: Modal receipt view featuring shop name, license number, items table, tax/payment method tags (Cash, UPI QR, Credit), and instant print/share readiness.",
+      "Poultry Stock & Expense Management: Dedicated purchase tracking for live broiler birds, country chicken, poultry feed, ice, transportation, shop rent, and utility expenses.",
+      "Real-Time Executive Financial Dashboard: Instant visibility into Net Profit, Profit Margin (%), Total Sales Volume (Kg & Amount), Order Counts, and Supplier Outflows.",
+      "P&L Summary & Daily Business Ledger: In-depth financial analytics with period filtering (This Month, Last Month, This Year, All Time, Custom Range) and date-indexed transaction ledgers.",
+      "Dynamic Pricing & Shop Profile Configuration: Live updates for fluctuating poultry market rates (Live Chicken, Curry Cut, Boneless, Wings) alongside customizable bilingual Malayalam/English metadata.",
+      "Neo-Brutalist Sticker Minimal Design System: High-contrast tactile UI with 1.5px outlines, Bricolage Grotesque & Anek Malayalam typography, and responsive web top-bar / mobile bottom-bar layouts."
     ],
     resumeBullets: [
-      "Architected a custom 2D canvas spinning wheel painter (WheelPainter) in Flutter using pure trigonometric angle mapping and procedural slice coloring for flexible roster sizes.",
-      "Engineered a deterministic spin-target animation engine utilizing AnimationController and Curves.decelerate, calculating pre-determined random winner offsets while maintaining visual suspense during full wheel revolutions.",
-      "Implemented a real-time slice-collision detection algorithm during animation ticks to trigger HapticFeedback.selectionClick() whenever the wheel pointer crosses slice boundaries.",
-      "Built an auto-adjusting responsive layout system featuring scroll-to-winner automation (Scrollable.ensureVisible) and user-override view mode toggling for seamless operation across desktop and mobile browsers."
+      "Architected and deployed a cross-platform retail management and POS suite with Flutter Web & Mobile using Provider state management and offline-first persistence.",
+      "Engineered an automated weight-based billing pipeline with dynamic price tiers, customer logging, multi-payment support (Cash, UPI, Credit), and digital receipt generation.",
+      "Implemented a secure role-based access control (RBAC) architecture separating Admin financial analytics from restricted Staff Counter operations with 4-digit PIN verification.",
+      "Designed a custom neo-brutalist 'Sticker Minimal' UI system featuring responsive web/mobile scaffolds, real-time P&L analytics, and daily business transaction ledgers."
     ]
   },
   {
@@ -214,31 +221,6 @@ export const projectsData = [
       "Dynamic Material Design 3 theme system with real-time Light/Dark mode switching",
       "Native device camera & gallery integration for receipt and item image attachments",
       "Custom interactive modal widgets for bill previews and total expense breakdowns"
-    ]
-  },
-  {
-    id: "taskflow-todo",
-    codeName: "taskflow.io",
-    title: "TaskFlow Enterprise Productivity Engine",
-    category: "flutter",
-    categoryLabel: "Mobile & Flutter",
-    shortDescription: "High-performance task management software with priority queueing, deadlines, and local device persistence.",
-    fullDescription: "A streamlined task management app engineered with state management patterns to handle complex task lifecycles, tag filtering, task status transitions, and offline persistence.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Flutter", "Dart", "SQLite / Hive", "State Management", "UI Design"],
-    featured: false,
-    githubUrl: "https://github.com/muhsin-ahamed/to-do-app-",
-    liveUrl: "https://github.com/muhsin-ahamed/to-do-app-",
-    metrics: [
-      { label: "App Startup Time", value: "< 0.4s Cold Start" },
-      { label: "Memory Footprint", value: "< 35MB Lean" },
-      { label: "Task Completion Rate", value: "98% Efficiency" }
-    ],
-    keyFeatures: [
-      "Intuitive drag-and-drop task sorting & priority tagging",
-      "Instant offline storage with automatic local database compression",
-      "Clean light theme styling with dark mode support toggle",
-      "Comprehensive category analytics showing completed vs pending work"
     ]
   }
 ];

@@ -1,229 +1,265 @@
-import React, { useState } from 'react';
-import { profileData } from '../data/profileData';
-import { experienceData, educationData, hrValueProps } from '../data/experienceData';
-import { 
-  User, 
-  Smartphone, 
-  Layout, 
-  Server, 
-  Cpu, 
-  CheckCircle2, 
-  Zap, 
-  Layers, 
-  MessageSquare, 
-  Briefcase, 
-  GraduationCap, 
-  ChevronRight,
-  Download,
-  Rocket,
-  Globe,
-  Handshake
-} from 'lucide-react';
+import React from 'react';
 
 export default function AboutSection() {
-  const [activeSkillCategory, setActiveSkillCategory] = useState(0);
+  const bioChecks = [
+    'Expert in Flutter & Dart for iOS, Android & Web from a single clean codebase.',
+    'Architecting full-stack web applications with React, Next.js, Node.js, Supabase, & Firebase.',
+    'Specialized in high-performance billing engines, real-time sync systems, and financial management portals.',
+    'Passionate about UI/UX polish, micro-interactions, responsive accessibility, and performance optimization.'
+  ];
 
-  const getCategoryIcon = (iconName) => {
-    switch (iconName) {
-      case 'Smartphone': return <Smartphone className="w-5 h-5 text-indigo-600" />;
-      case 'Layout': return <Layout className="w-5 h-5 text-blue-600" />;
-      case 'Server': return <Server className="w-5 h-5 text-emerald-600" />;
-      case 'Cpu': return <Cpu className="w-5 h-5 text-purple-600" />;
-      default: return <Smartphone className="w-5 h-5 text-indigo-600" />;
+  const workPrinciples = [
+    {
+      num: '01',
+      title: 'Production-Ready Development',
+      desc: 'Clean, maintainable Flutter applications built with scalable architecture, reusable components, and production-focused practices.'
+    },
+    {
+      num: '02',
+      title: 'Performance & Reliability',
+      desc: 'Fast, responsive applications designed to deliver a smooth experience across mobile, desktop, and web.'
+    },
+    {
+      num: '03',
+      title: 'Cross-Platform Engineering',
+      desc: 'Build once and deliver consistently across Android, iOS, Web, and Desktop using Flutter.'
+    },
+    {
+      num: '04',
+      title: 'Client-Focused Approach',
+      desc: 'Clear communication, practical solutions, transparent progress, and a strong focus on delivering what the project actually needs.'
     }
-  };
+  ];
 
-  const getValPropIcon = (iconName) => {
-    switch (iconName) {
-      case 'Rocket': return <Rocket className="w-6 h-6 text-indigo-600" />;
-      case 'Zap': return <Zap className="w-6 h-6 text-amber-500" />;
-      case 'Globe': return <Globe className="w-6 h-6 text-blue-600" />;
-      case 'Handshake': return <Handshake className="w-6 h-6 text-emerald-600" />;
-      case 'CheckCircle2': return <CheckCircle2 className="w-6 h-6 text-emerald-600" />;
-      case 'Layers': return <Layers className="w-6 h-6 text-indigo-600" />;
-      case 'MessageSquare': return <MessageSquare className="w-6 h-6 text-blue-600" />;
-      default: return <CheckCircle2 className="w-6 h-6 text-emerald-600" />;
+  const skillGroups = [
+    {
+      category: 'Frontend',
+      skills: ['Flutter & Flutter Web', 'Dart', 'Provider / BLoC', 'go_router', 'Material 3']
+    },
+    {
+      category: 'Backend, Cloud & Databases',
+      skills: ['Supabase & PostgreSQL', 'Firebase (Auth, Firestore, Functions)', 'REST APIs & Dio', 'JWT Auth', 'SQLite / Hive / Isar']
+    },
+    {
+      category: 'Architecture & Best Practices',
+      skills: ['Clean Architecture & SOLID', 'RBAC', 'Excel Import/Export', 'Git', 'CI/CD & GitHub Actions']
     }
-  };
+  ];
+
+  const experiencePoints = [
+    'Developed cross-platform applications using Flutter for Android, iOS, Web, and Desktop.',
+    'Built business-focused systems including POS, billing, management, and dashboard solutions.',
+    'Integrated REST APIs, Supabase, Firebase, authentication, and cloud databases.',
+    'Worked directly with project requirements, UI/UX implementation, testing, and deployment.'
+  ];
+
+  const experienceTags = ['Flutter', 'Dart', 'Supabase', 'PostgreSQL', 'REST APIs', 'Firebase', 'Hive'];
 
   return (
-    <section id="about" className="relative py-20 lg:py-28 bg-white border-y border-slate-200/80 overflow-hidden">
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 lg:py-24 border-t border-slate-200/60 dark:border-slate-800/70">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200/60 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-3">
-            <User className="w-3.5 h-3.5" />
-            About & Expertise
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Building Reliable Digital Products
+        <div className="mb-10">
+          <span className="text-xs sm:text-[13px] font-semibold tracking-widest text-slate-400 dark:text-slate-500 uppercase block mb-2">
+            ABOUT
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0B1325] dark:text-white tracking-tight leading-[1.1]">
+            Reliable products,<br />built with care.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl">
-            I build scalable apps and web platforms with a focus on performance, clean architecture, and great user experiences.
-          </p>
         </div>
 
-        {/* HR & Client Value Proposition Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {hrValueProps.map((prop, idx) => (
-            <div 
-              key={idx}
-              className="paper-card paper-card-hover p-6 rounded-2xl border border-slate-200/90 flex flex-col justify-between cursor-default"
-            >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs">
-                  {getValPropIcon(prop.icon)}
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">
-                  {prop.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {prop.desc}
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-indigo-600">
-                <span>Verified Metric</span>
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Two Column Layout: Skills Tabs & Experience Timeline */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-8">
-          
-          {/* Left Column: Interactive Skills Matrix */}
-          <div className="lg:col-span-7">
-            <div className="paper-card p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-xs">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                <div>
-                  <h3 className="text-xl font-extrabold text-slate-900">
-                    Technical Skill
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-0.5">
-                    Click categories to explore specific domain proficiencies
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-bold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full border border-indigo-200/60">
-                  Core Skills
-                </span>
-              </div>
-
-              {/* Category Buttons */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6">
-                {profileData.skillsCategory.map((cat, idx) => {
-                  const isActive = activeSkillCategory === idx;
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveSkillCategory(idx)}
-                      className={`flex flex-col items-center justify-center p-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
-                        isActive
-                          ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
-                          : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 hover:border-slate-300 hover:text-slate-900'
-                      }`}
-                    >
-                      <div className="mb-1.5">{getCategoryIcon(cat.icon)}</div>
-                      <span className="text-center leading-tight">{cat.category}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Skill List */}
-              <div className="space-y-2.5">
-                {profileData.skillsCategory[activeSkillCategory].skills.map((skill, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:bg-slate-50 transition-colors">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600 shrink-0"></div>
-                    <span className="text-sm font-bold text-slate-800">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
+        {/* Section 1: Overview & Stats */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          {/* Checks Card */}
+          <div className="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs">
+            <ul className="space-y-4 sm:space-y-5">
+              {bioChecks.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <span className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right Column: Work History */}
-          <div className="lg:col-span-5">
-            <div className="paper-card p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-xs">
-              <div className="flex items-center gap-2 mb-6 pb-3 border-b border-slate-100">
-                <Briefcase className="w-5 h-5 text-indigo-600" />
-                <h3 className="text-xl font-extrabold text-slate-900">
-                  Professional Experience
-                </h3>
-              </div>
-
-              <div className="space-y-6">
-                {experienceData.map((exp) => (
-                  <div key={exp.id} className="relative pl-6 border-l-2 border-indigo-200/80 group">
-                    <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-indigo-600 group-hover:scale-125 transition-transform"></div>
-                    
-                    <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-100">
-                      {exp.period}
-                    </span>
-                    <h4 className="text-base font-extrabold text-slate-900 mt-1">
-                      {exp.role}
-                    </h4>
-                    <span className="text-xs font-semibold text-slate-500 block mb-2">
-                      {exp.company} • {exp.location}
-                    </span>
-
-                    <p className="text-xs text-slate-600 mb-3 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    <ul className="space-y-1.5 mb-3">
-                      {exp.achievements.map((ach, aIdx) => (
-                        <li key={aIdx} className="text-xs text-slate-600 flex items-start gap-1.5">
-                          <ChevronRight className="w-3.5 h-3.5 text-indigo-500 shrink-0 mt-0.5" />
-                          <span>{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {exp.tech.map((t, tIdx) => (
-                        <span 
-                          key={tIdx} 
-                          className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 font-medium"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Full-Width Education Section */}
-        <div className="paper-card p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-xs">
-          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100">
-            <GraduationCap className="w-5 h-5 text-indigo-600" />
-            <h3 className="text-xl font-extrabold text-slate-900">
-              Education & Academic Foundation
-            </h3>
-          </div>
-          {educationData.map((edu, idx) => (
-            <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-slate-600">
-              <div>
-                <div className="font-extrabold text-slate-900 text-base">{edu.degree}</div>
-                <div className="text-indigo-600 font-semibold text-sm">{edu.institution}</div>
-                <p className="mt-1 text-xs text-slate-500">{edu.description}</p>
-              </div>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-xl border border-indigo-100 shrink-0 self-start sm:self-center">
-                {edu.period}
+          {/* Stats Cards */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-3.5">
+            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
+              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
+                6
+              </strong>
+              <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                Projects built
               </span>
             </div>
-          ))}
+
+            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
+              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
+                5
+              </strong>
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                <span>Live in production</span>
+              </span>
+            </div>
+
+            <div className="flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center justify-between shadow-xs">
+              <strong className="text-3xl sm:text-4xl font-extrabold text-[#0B1325] dark:text-white tracking-tight">
+                4
+              </strong>
+              <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                Platforms supported
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 2: How I Work */}
+        <div className="mt-16 sm:mt-20">
+          <span className="text-xs sm:text-[13px] font-semibold tracking-widest text-slate-400 dark:text-slate-500 uppercase block mb-1">
+            HOW I WORK
+          </span>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            A process clients can rely on
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {workPrinciples.map((work) => (
+              <div
+                key={work.num}
+                className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#0B1325] text-white dark:bg-white dark:text-slate-950 flex items-center justify-center font-bold text-sm mb-4">
+                  {work.num}
+                </div>
+                <h4 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                  {work.title}
+                </h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                  {work.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 3: Skills */}
+        <div className="mt-16 sm:mt-20">
+          <span className="text-xs sm:text-[13px] font-semibold tracking-widest text-slate-400 dark:text-slate-500 uppercase block mb-1">
+            SKILLS
+          </span>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            Tools &amp; technologies
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {skillGroups.map((group, idx) => (
+              <div
+                key={idx}
+                className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs"
+              >
+                <h4 className="text-base font-bold text-slate-900 dark:text-white pb-3.5 mb-4 border-b border-slate-100 dark:border-slate-800">
+                  {group.category}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="text-xs font-medium px-3 py-1.5 rounded-xl bg-slate-100/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 4: Experience */}
+        <div className="mt-16 sm:mt-20">
+          <span className="text-xs sm:text-[13px] font-semibold tracking-widest text-slate-400 dark:text-slate-500 uppercase block mb-1">
+            EXPERIENCE
+          </span>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            Where I've worked
+          </h3>
+
+          <div className="relative pl-7 sm:pl-8">
+            {/* Timeline vertical bar */}
+            <div className="absolute left-[7px] top-6 bottom-6 w-[2px] bg-slate-200 dark:bg-slate-800"></div>
+
+            {/* Timeline card with bullet node */}
+            <div className="relative">
+              {/* Timeline Node dot */}
+              <div className="absolute -left-7 sm:-left-8 top-7 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-[3.5px] border-[#0B1325] dark:border-white"></div>
+
+              <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                      Freelance Flutter Developer
+                    </h4>
+                    <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5">
+                      Client Projects
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                    2023 – Present
+                  </span>
+                </div>
+
+                <ul className="my-4 space-y-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed list-disc pl-5 marker:text-slate-300 dark:marker:text-slate-700">
+                  {experiencePoints.map((pt, pIdx) => (
+                    <li key={pIdx}>{pt}</li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {experienceTags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-xs font-medium px-3 py-1.5 rounded-xl bg-slate-100/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 5: Education */}
+        <div className="mt-16 sm:mt-20">
+          <span className="text-xs sm:text-[13px] font-semibold tracking-widest text-slate-400 dark:text-slate-500 uppercase block mb-1">
+            EDUCATION
+          </span>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            Background
+          </h3>
+
+          <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[20px] p-6 sm:p-7 shadow-xs">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                  Bachelor of Arts in Sociology
+                </h4>
+                <div className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5">
+                  University of Calicut
+                </div>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-2.5">
+                  Focused on Sociology, Social Research Methods, and Social Theory.
+                </p>
+              </div>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                2022 – 2025
+              </span>
+            </div>
+          </div>
         </div>
 
       </div>

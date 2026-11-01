@@ -1,7 +1,7 @@
 export const profileData = {
   name: "Muhsin Ahamed T",
   title: "Flutter Developer & Full-Stack Engineer",
-  avatar: "https://github.com/muhsin-ahamed.png",
+  avatar: "/images/avatar.png",
   tagline: "Building scalable cross-platform mobile apps & high-performance web systems with clean architecture.",
   location: "Kerala, India (Available Worldwide / Remote)",
   status: "Available for Freelance Projects & Full-Time Roles",
